@@ -13,20 +13,20 @@ beginschermTitel.pack()
 beginschermTitel.image = titelBeginscherm
 beginschermTitel.place(x=47, y=47)
 
-inputButton = PhotoImage(file="input-button.png")
-buttonInput = Button(rootframe, width=256, height=96, image=inputButton, borderwidth=0, command=rootframe.quit, bg="#ffb400")
+inputButton = PhotoImage(file="inputButton.png")
+buttonInput = Button(rootframe, width=256, height=96, image=inputButton, borderwidth=0, command=rootframe.quit, bg="#ffb400", activebackground="#ffb400")
 buttonInput.pack()
 buttonInput.image = inputButton
 buttonInput.place(x=47, y=282)
 
-tweetDisplayButton = PhotoImage(file="tweetDisplay-button.png")
-displayTweetButton = Button(rootframe, width=256, height=96, image=tweetDisplayButton, borderwidth=0, command=rootframe.quit, bg="#ffb400")
+tweetDisplayButton = PhotoImage(file="tweetDisplayButton.png")
+displayTweetButton = Button(rootframe, width=256, height=96, image=tweetDisplayButton, borderwidth=0, command=rootframe.quit, bg="#ffb400", activebackground="#ffb400")
 displayTweetButton.pack()
 displayTweetButton.image = tweetDisplayButton
 displayTweetButton.place(x=353, y=282)
 
-modPanelButton = PhotoImage(file="moderationPanel-button.png")
-modCPButton = Button(rootframe, width=256, height=96, image=modPanelButton, borderwidth=0, command=rootframe.quit, bg="#ffb400")
+modPanelButton = PhotoImage(file="moderationPanelButton.png")
+modCPButton = Button(rootframe, width=256, height=96, image=modPanelButton, borderwidth=0, command=rootframe.quit, bg="#ffb400", activebackground="#ffb400")
 modCPButton.pack()
 modCPButton.image = modPanelButton
 modCPButton.place(x=659, y=282)
