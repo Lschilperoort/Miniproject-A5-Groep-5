@@ -1,45 +1,10 @@
 from tkinter import *
 
-def a():
-    root=Tk()
-    root.title("NS Consumenten Zuil - Beheer")
-    rootframe = Frame(root, bg="#ffb400", width=960, height=540)
-    root.geometry("+470+215")
-    rootframe.pack_propagate(0)
-    root.resizable(width=False, height=False)
-
-    titelBeginscherm = PhotoImage(file="beginScherm.png")
-    beginschermTitel = Label(rootframe, image=titelBeginscherm, bg="#ffb400")
-    beginschermTitel.pack()
-    beginschermTitel.image = titelBeginscherm
-    beginschermTitel.place(x=47, y=47)
-
-    inputButton = PhotoImage(file="inputButton.png")
-    buttonInput = Button(rootframe, width=256, height=96, image=inputButton, borderwidth=0, command=b, bg="#ffb400", activebackground="#ffb400")
-    buttonInput.pack()
-    buttonInput.image = inputButton
-    buttonInput.place(x=47, y=282)
-
-    tweetDisplayButton = PhotoImage(file="tweetDisplayButton.png")
-    displayTweetButton = Button(rootframe, width=256, height=96, image=tweetDisplayButton, borderwidth=0, command=d, bg="#ffb400", activebackground="#ffb400")
-    displayTweetButton.pack()
-    displayTweetButton.image = tweetDisplayButton
-    displayTweetButton.place(x=353, y=282)
-
-    modPanelButton = PhotoImage(file="moderationPanelButton.png")
-    modCPButton = Button(rootframe, width=256, height=96, image=modPanelButton, borderwidth=0, command=c, bg="#ffb400", activebackground="#ffb400")
-    modCPButton.pack()
-    modCPButton.image = modPanelButton
-    modCPButton.place(x=659, y=282)
-
-    rootframe.pack()
-    root.mainloop()
-
 def b():
-    rootb=Toplevel()
+    rootb=Toplevel(root)
     rootb.title("NS Consumenten Zuil - Feedback")
     rootframeb = Frame(rootb, bg="#ffb400", width=960, height=540)
-    rootb.geometry("+470+215")
+    rootb.geometry("+570+315")
     rootframeb.pack_propagate(0)
     rootb.resizable(width=False, height=False)
 
@@ -63,10 +28,10 @@ def b():
     rootb.mainloop()
 
 def c():
-    rootc=Toplevel()
+    rootc=Toplevel(root)
     rootc.title("NS Consumenten Zuil - Moderation")
     rootframec = Frame(rootc, bg="#ffb400", width=960, height=540)
-    rootc.geometry("+470+215")
+    rootc.geometry("+590+335")
     rootframec.pack_propagate(0)
     rootc.resizable(width=False, height=False)
 
@@ -92,10 +57,10 @@ def c():
     rootc.mainloop()
 
 def d():
-    rootd=Toplevel()
+    rootd=Toplevel(root)
     rootd.title("NS Consumenten Zuil - Display Scherm")
     rootframed = Frame(rootd, bg="#ffb400", width=960, height=540)
-    rootd.geometry("+470+215")
+    rootd.geometry("+610+355")
     rootframed.pack_propagate(0)
     rootd.resizable(width=False, height=False)
 
@@ -108,4 +73,36 @@ def d():
     rootframed.pack()
     rootd.mainloop()
 
-a()
+root=Tk()
+root.title("NS Consumenten Zuil - Beheer")
+rootframe = Frame(root, bg="#ffb400", width=960, height=540)
+root.geometry("+470+215")
+rootframe.pack_propagate(0)
+root.resizable(width=False, height=False)
+
+titelBeginscherm = PhotoImage(file="beginScherm.png")
+beginschermTitel = Label(rootframe, image=titelBeginscherm, bg="#ffb400")
+beginschermTitel.pack()
+beginschermTitel.image = titelBeginscherm
+beginschermTitel.place(x=47, y=47)
+
+inputButton = PhotoImage(file="inputButton.png")
+buttonInput = Button(rootframe, width=256, height=96, image=inputButton, borderwidth=0, command=b, bg="#ffb400", activebackground="#ffb400")
+buttonInput.pack()
+buttonInput.image = inputButton
+buttonInput.place(x=47, y=282)
+
+tweetDisplayButton = PhotoImage(file="tweetDisplayButton.png")
+displayTweetButton = Button(rootframe, width=256, height=96, image=tweetDisplayButton, borderwidth=0, command=d, bg="#ffb400", activebackground="#ffb400")
+displayTweetButton.pack()
+displayTweetButton.image = tweetDisplayButton
+displayTweetButton.place(x=353, y=282)
+
+modPanelButton = PhotoImage(file="moderationPanelButton.png")
+modCPButton = Button(rootframe, width=256, height=96, image=modPanelButton, borderwidth=0, command=c, bg="#ffb400", activebackground="#ffb400")
+modCPButton.pack()
+modCPButton.image = modPanelButton
+modCPButton.place(x=659, y=282)
+
+rootframe.pack()
+root.mainloop()
