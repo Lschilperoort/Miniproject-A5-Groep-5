@@ -12,17 +12,42 @@ CONSUMER_SECRET = 'uAc3qvGnk49p4aFYmtEEAeaEBLOw8WjDHBwFjq87bD3RL6OhUS'
 ACCESS_TOKEN_KEY = '793404803615428608-vXxKpDgWHud5PQpSi7E5XrFmA5tCS6n'
 ACCESS_TOKEN_SECRET = 'lPAbEYvKyznrTN1jn9Rw7wwrOt7JIVixFI5vMmxVMUWQb'
 api = TwitterAPI(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET)
+teller = 0
+
+
+def tweetLezen():
+    global teller
+
+    with open('tweetfile.csv') as TweetBestand:
+        infile = csv.reader(TweetBestand, delimiter='\n')
+        tweets = list(infile)
+        if teller > len(tweets):
+            tweet = tweets[teller][0]
+            teller += 1
+        TweetBestand.close()
+    print(tweet)
+    return tweet
+
+
+
+
 
 def tweetuploaden(TWEET_TEXT):
     r = api.request('statuses/update', {'status': TWEET_TEXT})
-    csv = open('tweetfile.csv', 'w+')
+    global tweet
+    time.sleep(10)
+    tweet = tweetLezen()
 
     print('SUCCESS' if r.status_code == 200 else 'FAILURE')
-def rejectedTweet(tweet):
+def Tweetlog(tweet):
     datum = datetime.datetime.now()
     csv = open('rejectedTweets.csv', 'a')
     csv.write(tweet + ' - ')
     csv.write(str(datum) + '\n')
+    csv.close()
+
+def quit():
+    csv = open('tweetfile.csv', 'w+')
     csv.close()
 
 def tweet_raw():
@@ -35,18 +60,7 @@ def tweet_raw():
         return tweet
 
 
-def tweetLezen():
-    with open('tweetfile.csv') as TweetBestand:
-        infile = csv.reader(TweetBestand, delimiter='\n')
-        for regel in infile:
-            print(regel[0])
-            antwoord = input('accept of reject')
-            if antwoord == 'accepted':
-                tweetuploaden(regel[0])
-            if antwoord == 'rejected':
-                rejectedTweet(regel[0])
-        deleter = open('tweetfile.csv', 'w+')
-        deleter.close()
+
 
 def tweetweergeven(SEARCH_TERM):
     i = 0
@@ -61,10 +75,16 @@ def tweetweergeven(SEARCH_TERM):
                 i = 0
                 break
         time.sleep(60)
+tweet = tweetLezen()
+time.sleep(10)
+tweetuploaden(tweet)
+time.sleep(10)
+tweetuploaden(tweet)
+time.sleep(10)
+tweetuploaden(tweet)
+time.sleep(10)
+tweetuploaden(tweet)
 
-tweet_raw()
-tweetLezen()
-tweetweergeven('from:NSzuiltestGr5')
 
 
 
