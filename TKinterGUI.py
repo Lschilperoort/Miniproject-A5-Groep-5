@@ -3,7 +3,6 @@ from Functies import *
 
 
 
-
 def b():
     rootb=Toplevel(root)
     rootb.title("NS Consumenten Zuil - Feedback")
@@ -47,9 +46,10 @@ def c():
     rootc.geometry("+590+335")
     rootframec.pack_propagate(0)
     rootc.resizable(width=False, height=False)
+    ingelezenTweet = tweetLezen()
     tweetMod = StringVar()
     text = Label(rootc, textvariable= tweetMod, font=("Helvetica", 20), bg = "#ffb400", wraplength = 960)
-    tweetMod.set(tweetLezen())
+    tweetMod.set(ingelezenTweet)
     text.pack()
     text.place(x=25, y=250)
 
@@ -61,20 +61,31 @@ def c():
 
     def Tweetveranderen():
         print('tweetfunctie')
-        tweetMod = StringVar()
-        text = Label(rootc, textvariable=tweetMod, font=("Helvetica", 20), bg="#ffb400", wraplength=960)
-        tweetMod.set(tweetLezen())
+        ingelezenTweet = tweetLezen()
+        print(ingelezenTweet)
+        tweetMod.set(ingelezenTweet)
         text.pack()
         text.place(x=25, y=250)
+        return ingelezenTweet
+    def TweetAccept():
+        ingelezenTweet = tweetLezen()
+        print(ingelezenTweet)
+        tweetMod.set(ingelezenTweet)
+        text.pack()
+        text.place(x=25, y=250)
+        Tweetlog(ingelezenTweet)
+    def TweetReject():
+        Ingelezentweet = Tweetveranderen()
+        Tweetlog(Ingelezentweet)
 
     approveButton = PhotoImage(file="approveButton.png")
-    buttonApprove = Button(rootframec, width=285, height=73, image=approveButton, borderwidth=0, command=Tweetveranderen(), bg="#ffb400", activebackground="#ffb400")
+    buttonApprove = Button(rootframec, width=285, height=73, image=approveButton, borderwidth=0, command=TweetAccept, bg="#ffb400", activebackground="#ffb400")
     buttonApprove.pack()
     buttonApprove.image = approveButton
     buttonApprove.place(x=171, y=422)
 
     denyButton = PhotoImage(file="denyButton.png")
-    buttonDeny = Button(rootframec, width=285, height=73, image=denyButton, borderwidth=0, command=NONE, bg="#ffb400", activebackground="#ffb400")
+    buttonDeny = Button(rootframec, width=285, height=73, image=denyButton, borderwidth=0, command=TweetReject, bg="#ffb400", activebackground="#ffb400")
     buttonDeny.pack()
     buttonDeny.image = denyButton
     buttonDeny.place(x=506, y=422)
@@ -131,7 +142,8 @@ modCPButton = Button(rootframe, width=256, height=96, image=modPanelButton, bord
 modCPButton.pack()
 modCPButton.image = modPanelButton
 modCPButton.place(x=659, y=282)
-
+print(teller)
 rootframe.pack()
 root.mainloop()
+
 
