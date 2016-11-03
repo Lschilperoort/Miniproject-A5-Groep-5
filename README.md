@@ -41,7 +41,7 @@ invoeren. Het komt vervolgens in een tekstbestand, CSV-bestand of XML-bestand.
 Bij het inklikken van de Tweet Display button opent een nieuw venster 
 "NS Consumenten Zuil - Display Scherm"
 hier kunnen de reizigers van de NS de meest recente tweets zien 
-die in het stationshal worden vertoond.
+die in de stationshal worden vertoond.
 
 #Op een ander scherm worden een aantal van de meest recente tweets van het account getoond
 in de stationshal. Het is belangrijk dat het er goed uit ziet.
@@ -51,7 +51,7 @@ in de stationshal. Het is belangrijk dat het er goed uit ziet.
 Bij het inklikken van de Moderation Panel button opent een nieuw venster
 "NS Consumenten Zuil - Moderation"
 hier kan de NS censuur toepassen, door de "accept" button in te klikken
-wordt de tweet opgeslagen en vertoond in het stationshal 
+wordt de tweet opgeslagen en vertoond in de stationshal 
 en door de "reject" button in te klikken wordt de tweet niet vertoond maar opgeslagen 
 in een log bestand.
 
@@ -64,4 +64,4 @@ want het gaat nu nog om een Proof-of-Concept (PoC).
 
 ==Bugs==
 
-
+Empty
