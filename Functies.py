@@ -12,21 +12,25 @@ CONSUMER_SECRET = 'uAc3qvGnk49p4aFYmtEEAeaEBLOw8WjDHBwFjq87bD3RL6OhUS'
 ACCESS_TOKEN_KEY = '793404803615428608-vXxKpDgWHud5PQpSi7E5XrFmA5tCS6n'
 ACCESS_TOKEN_SECRET = 'lPAbEYvKyznrTN1jn9Rw7wwrOt7JIVixFI5vMmxVMUWQb'
 api = TwitterAPI(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET)
+teller = 0
 
 
 def tweetLezen():
-    teller = 0
+    global teller
 
     with open('tweetfile.csv') as TweetBestand:
         infile = csv.reader(TweetBestand, delimiter='\n')
         tweets = list(infile)
         if teller < len(tweets):
-            print('hallo')
             tweet = tweets[teller][0]
             teller += 1
         TweetBestand.close()
-    print(tweet)
-    return tweet
+    try:
+        return tweet
+    except:
+        tweet = 'error, er zijn geen tweets meer'
+        return tweet
+
 
 
 
@@ -74,8 +78,3 @@ def tweetweergeven(SEARCH_TERM):
                 i = 0
                 break
         time.sleep(60)
-
-
-
-
-tweetLezen()
