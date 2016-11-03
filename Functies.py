@@ -36,7 +36,6 @@ def tweetuploaden(TWEET_TEXT):
     r = api.request('statuses/update', {'status': TWEET_TEXT})
     global tweet
     time.sleep(10)
-    tweet = tweetLezen()
 
     print('SUCCESS' if r.status_code == 200 else 'FAILURE')
 def Tweetlog(tweet):
@@ -75,15 +74,6 @@ def tweetweergeven(SEARCH_TERM):
                 i = 0
                 break
         time.sleep(60)
-tweet = tweetLezen()
-time.sleep(10)
-tweetuploaden(tweet)
-time.sleep(10)
-tweetuploaden(tweet)
-time.sleep(10)
-tweetuploaden(tweet)
-time.sleep(10)
-tweetuploaden(tweet)
 
 
 

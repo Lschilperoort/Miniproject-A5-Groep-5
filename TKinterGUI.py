@@ -104,4 +104,3 @@ modCPButton.pack()
 modCPButton.image = modPanelButton
 modCPButton.place(x=659, y=282)
 
-tweetuploaden('importtest')
