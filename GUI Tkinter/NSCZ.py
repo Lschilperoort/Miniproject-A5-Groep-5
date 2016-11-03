@@ -2,6 +2,20 @@ from tkinter import *
 from projectbestand import *
 
 def b():
+    def enter():
+        root = Tk()
+
+        def evaluate(event):
+            data = e.get("1.0", END)[0:140]
+            print(data)
+
+        e = Text(root)
+        e.bind("<Return>", evaluate)
+        e.pack()
+
+        root.mainloop()
+
+
     rootb=Toplevel(root)
     rootb.title("NS Consumenten Zuil - Feedback")
     rootframeb = Frame(rootb, bg="#ffb400", width=960, height=540)
@@ -20,7 +34,7 @@ def b():
     e.place(x=47, y=282, relwidth=1, relheight=1, width=-91, height=-400)
 
     tweetButton = PhotoImage(file="tweetButton.png")
-    buttonTweet = Button(rootframeb, width=285, height=73, image=tweetButton, borderwidth=0, command=NONE, bg="#ffb400", activebackground="#ffb400")
+    buttonTweet = Button(rootframeb, width=285, height=73, image=tweetButton, borderwidth=0, command=enter(), bg="#ffb400", activebackground="#ffb400")
     buttonTweet.pack()
     buttonTweet.image = tweetButton
     buttonTweet.place(x=631, y=441)
