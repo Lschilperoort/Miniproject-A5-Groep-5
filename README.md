@@ -9,12 +9,12 @@ dat zij goed kunnen communiceren met hun klanten.
 Daarom houden ze van tijd tot tijd een enquête onder de reizigers. 
 Het nadeel van een enquête is dat het lang duurt voordat je de resultaten krijgt. 
 De NS heeft gehoord dat Twitter veel sneller werkt. 
-Het lijkt de directie leuk dat klanten hun opmerkingen/complimenten via een computer, 
-aanwezig in het station kunnen invoeren 
-en dat deze opmerkingen dan zichtbaar worden in de stationshal.
+Het lijkt de directie leuk dat klanten hun ervaringen via een computer, 
+aanwezig in het station kunnen delen 
+en dat deze ervaringen dan zichtbaar worden in de stationshal.
 Men is ook wel een beetje bang voor Twitter, 
 want men is bang dat het gebruikt gaat worden als uitlaatklep voor ontevreden reizigers. 
-Daarom is het belangrijk dat de inhoud van de tweets worden gelezen 
+Daarom is het belangrijk dat de inhoud van de tweets worden nagelezen 
 voordat ze worden gepost op Twitter en zichtbaar worden in de stationshal.
 
 ==Gebruikershandleiding==
@@ -30,7 +30,7 @@ Bij het inklikken van de Input Panel button opent een nieuw venster
 "NS Consumenten Zuil - Feedback" 
 hier kunnen de gebruikers hun feedback geven die later in de vorm van een tweet wordt
 vertoond in een ander venster nadat deze is goedgekeurd door de NS.
-De feedback wordt ingevoerd in de text-box en wordt doorgestuurd naar de Moderation Panel
+De feedback wordt ingevoerd in een text-box en wordt doorgestuurd naar de Moderation Panel
 door de knop "Tweet" in te klikken.
 
 #Op een computer in het station kunnen mensen hun berichtje van maximaal 140 karakters 
