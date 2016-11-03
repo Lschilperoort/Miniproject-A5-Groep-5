@@ -3,12 +3,14 @@ from tkinter import *
 
 root=Tk()
 
-def evaluate(event):
-    data=e.get("1.0", END)[0:140]
-    print(data)
+w = Label(root, text="Rouge", fg="red")
+w = Label(root, text="Helvetica", font=("Helvetica", 16))
+w.pack()
+w.place(x=20, y= 20)
 
-e = Text(root)
-e.bind("<Return>", evaluate)
-e.pack()
+
 
 root.mainloop()
+
+
+tweet = '342i94324309249302483092830928324093283209389438092432' + '\n'

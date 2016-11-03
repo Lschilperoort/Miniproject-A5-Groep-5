@@ -4,7 +4,6 @@ from Functies import *
 
 
 
-
 def b():
     rootb=Toplevel(root)
     rootb.title("NS Consumenten Zuil - Feedback")
@@ -48,6 +47,11 @@ def c():
     rootc.geometry("+590+335")
     rootframec.pack_propagate(0)
     rootc.resizable(width=False, height=False)
+    tweetMod = StringVar()
+    text = Label(rootc, textvariable= tweetMod, font=("Helvetica", 20), bg = "#ffb400", wraplength = 960)
+    tweetMod.set(tweetLezen())
+    text.pack()
+    text.place(x=25, y=250)
 
     titelBeginscherm = PhotoImage(file="modCPSchermTitel.png")
     beginschermTitel = Label(rootframec, image=titelBeginscherm, bg="#ffb400")
@@ -55,8 +59,16 @@ def c():
     beginschermTitel.image = titelBeginscherm
     beginschermTitel.place(x=47, y=47)
 
+    def Tweetveranderen():
+        print('tweetfunctie')
+        tweetMod = StringVar()
+        text = Label(rootc, textvariable=tweetMod, font=("Helvetica", 20), bg="#ffb400", wraplength=960)
+        tweetMod.set(tweetLezen())
+        text.pack()
+        text.place(x=25, y=250)
+
     approveButton = PhotoImage(file="approveButton.png")
-    buttonApprove = Button(rootframec, width=285, height=73, image=approveButton, borderwidth=0, command=NONE, bg="#ffb400", activebackground="#ffb400")
+    buttonApprove = Button(rootframec, width=285, height=73, image=approveButton, borderwidth=0, command=Tweetveranderen(), bg="#ffb400", activebackground="#ffb400")
     buttonApprove.pack()
     buttonApprove.image = approveButton
     buttonApprove.place(x=171, y=422)
@@ -66,6 +78,8 @@ def c():
     buttonDeny.pack()
     buttonDeny.image = denyButton
     buttonDeny.place(x=506, y=422)
+
+
 
     rootframec.pack()
     rootc.mainloop()
