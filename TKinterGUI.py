@@ -1,5 +1,4 @@
 from tkinter import *
-from projectbestand import *
 
 def b():
     rootb=Toplevel(root)
