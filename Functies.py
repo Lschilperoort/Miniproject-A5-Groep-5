@@ -36,6 +36,7 @@ def tweetuploaden(TWEET_TEXT):
     r = api.request('statuses/update', {'status': TWEET_TEXT})
     global tweet
     time.sleep(10)
+    tweet = tweetLezen()
 
     print('SUCCESS' if r.status_code == 200 else 'FAILURE')
 def Tweetlog(tweet):
@@ -49,8 +50,7 @@ def quit():
     csv = open('tweetfile.csv', 'w+')
     csv.close()
 
-def tweet_raw():
-    tweet = input('tweet: ')
+def tweet_raw(tweet):
     if len(tweet) >= 141 or len(tweet) < 1:
         print('tweet is te lang, of u heeft niks ingevuld ')
     else:
@@ -74,6 +74,7 @@ def tweetweergeven(SEARCH_TERM):
                 i = 0
                 break
         time.sleep(60)
+
 
 
 

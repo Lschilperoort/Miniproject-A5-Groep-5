@@ -1,4 +1,9 @@
 from tkinter import *
+from Functies import *
+
+
+
+
 
 def b():
     rootb=Toplevel(root)
@@ -17,12 +22,21 @@ def b():
     e = Text(rootframeb)
     e.pack()
     e.place(x=47, y=282, relwidth=1, relheight=1, width=-91, height=-400)
+    invoertweet = e.get("1.0",END)
+
+    def retrieve_input():
+        input = e.get("1.0", 'end-1c')
+        print(input)
+        tweet_raw(input)
 
     tweetButton = PhotoImage(file="tweetButton.png")
-    buttonTweet = Button(rootframeb, width=285, height=73, image=tweetButton, borderwidth=0, command=NONE, bg="#ffb400", activebackground="#ffb400")
+    buttonTweet = Button(rootframeb, width=285, height=73, image=tweetButton, borderwidth=0, command=retrieve_input, bg="#ffb400", activebackground="#ffb400")
     buttonTweet.pack()
     buttonTweet.image = tweetButton
     buttonTweet.place(x=631, y=441)
+
+
+
 
     rootframeb.pack()
     rootb.mainloop()
@@ -103,4 +117,7 @@ modCPButton = Button(rootframe, width=256, height=96, image=modPanelButton, bord
 modCPButton.pack()
 modCPButton.image = modPanelButton
 modCPButton.place(x=659, y=282)
+
+rootframe.pack()
+root.mainloop()
 
