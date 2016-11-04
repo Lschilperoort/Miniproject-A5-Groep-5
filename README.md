@@ -19,7 +19,7 @@ voordat ze worden gepost op Twitter en zichtbaar worden in de stationshal.
 
 ==Gebruikershandleiding==
 
-Het programma wordt gestart en biedt de volgende keuzes:
+Het programma wordt gestart door dubbel te klikken op NZCS.py en biedt de volgende keuzes:
 1. Input Panel
 2. Tweet Display
 3. Moderation Panel
