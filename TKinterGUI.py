@@ -40,6 +40,8 @@ def b():
     rootb.mainloop()
 
 #Opent de moderation panel
+
+
 def c():
     rootc=Toplevel(root)
     rootc.title("NS Consumenten Zuil - Moderation")
@@ -60,24 +62,35 @@ def c():
     beginschermTitel.image = titelBeginscherm
     beginschermTitel.place(x=47, y=47)
 
+
     def Tweetveranderen():
-        print('tweetfunctie')
-        ingelezenTweet = tweetLezen()
-        print(ingelezenTweet)
+        lijst = tweetLezen()
+        ingelezenTweet = lijst[teller]
         tweetMod.set(ingelezenTweet)
         text.pack()
         text.place(x=25, y=250)
         return ingelezenTweet
-    def TweetAccept():
-        ingelezenTweet = tweetLezen()
-        print(ingelezenTweet)
-        tweetMod.set(ingelezenTweet)
-        text.pack()
-        text.place(x=25, y=250)
-        Tweetlog(ingelezenTweet)
+
+    teller = 0
+
     def TweetReject():
-        Ingelezentweet = Tweetveranderen()
-        Tweetlog(Ingelezentweet)
+        lijst = tweetLezen()
+        global teller
+        teller += 1
+        Tweetlog(lijst[teller])
+        Tweetveranderen()
+
+    def TweetAccept():
+        lijst = tweetLezen()
+        global teller
+        teller += 1
+        tweetuploaden(lijst[teller])
+        Tweetveranderen()
+
+
+
+
+
 
     approveButton = PhotoImage(file="approveButton.png")
     buttonApprove = Button(rootframec, width=285, height=73, image=approveButton, borderwidth=0, command=TweetAccept, bg="#ffb400", activebackground="#ffb400")
@@ -96,6 +109,8 @@ def c():
     rootframec.pack()
     rootc.mainloop()
 
+
+
 #Opent de tweet display scherm
 def d():
     rootd=Toplevel(root)
@@ -105,26 +120,40 @@ def d():
     rootframed.pack_propagate(0)
     rootd.resizable(width=False, height=False)
 
-    tweetDisplayTitel = PhotoImage(file="tweetDisplayTitel.png")
-    titelDisplayTweet = Label(rootframed, image=tweetDisplayTitel, bg="#ffb400")
-    titelDisplayTweet.pack()
-    titelDisplayTweet.image = tweetDisplayTitel
-    titelDisplayTweet.place(x=47, y=47)
+    def display():
+        tweetDisplayTitel = PhotoImage(file="tweetDisplayTitel.png")
+        titelDisplayTweet = Label(rootframed, image=tweetDisplayTitel, bg="#ffb400")
+        titelDisplayTweet.pack()
+        titelDisplayTweet.image = tweetDisplayTitel
+        titelDisplayTweet.place(x=47, y=47)
+    display()
 
-    label1 = Label(rootframed,text="GOP strategist Steve Schmidt: #Trump camp's dishonest criminalization of HRC is \"yet another attack on the pillars of democracy\" #NeverTrump",font=("Helvetica", 13), bg="white", wraplength=710, justify=LEFT)
-    label1.pack()
-    label1.place(x=175, y=175)
+    def refresh():
+        display()
+        tweets = tweetweergeven()
+        labeltext1 = StringVar()
+        label1 = Label(rootframed,textvariable=labeltext1,font=("Helvetica", 13), bg="white", wraplength=710, justify=LEFT)
+        labeltext1.set(tweets[0])
+        label1.pack()
+        label1.place(x=175, y=175)
+        labeltext2 = StringVar()
+        label2 = Label(rootframed,textvariable=labeltext2,font=("Helvetica", 13), bg="white", wraplength=710, justify=LEFT)
+        labeltext2.set(tweets[1])
+        label2.pack()
+        label2.place(x=175, y=303)
+        labeltext3 = StringVar()
+        label3 = Label(rootframed,textvariable=labeltext3,font=("Helvetica", 13), bg="white", wraplength=710, justify=LEFT)
+        labeltext3.set(tweets[2])
+        label3.pack()
+        label3.place(x=175, y=431)
 
-    label2 = Label(rootframed,text="If we make it easier for more foreign visitors to visit... (it) grows the #economy.” Pss the #JOLTAct http://tiny.cc/PassJOLT @dddddddddddd!",font=("Helvetica", 13), bg="white", wraplength=710, justify=LEFT)
-    label2.pack()
-    label2.place(x=175, y=303)
-
-    label3 = Label(rootframed,text="If we make it easier for more foreign visitors to visit... (it) grows the #economy.” Pss the #JOLTAct http://tiny.cc/PassJOLT @dddddddddddd!",font=("Helvetica", 13), bg="white", wraplength=710, justify=LEFT)
-    label3.pack()
-    label3.place(x=175, y=431)
+        root.after(60000, refresh)
 
     rootframed.pack()
+    refresh()
     rootd.mainloop()
+
+
 
 #Opent de beheer scherm
 root=Tk()
@@ -157,7 +186,6 @@ modCPButton = Button(rootframe, width=256, height=96, image=modPanelButton, bord
 modCPButton.pack()
 modCPButton.image = modPanelButton
 modCPButton.place(x=659, y=282)
-print(teller)
 rootframe.pack()
 root.mainloop()
 

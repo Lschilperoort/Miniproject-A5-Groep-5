@@ -12,24 +12,15 @@ CONSUMER_SECRET = 'uAc3qvGnk49p4aFYmtEEAeaEBLOw8WjDHBwFjq87bD3RL6OhUS'
 ACCESS_TOKEN_KEY = '793404803615428608-vXxKpDgWHud5PQpSi7E5XrFmA5tCS6n'
 ACCESS_TOKEN_SECRET = 'lPAbEYvKyznrTN1jn9Rw7wwrOt7JIVixFI5vMmxVMUWQb'
 api = TwitterAPI(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET)
-teller = 0
+
 
 
 def tweetLezen():
-    global teller
 
     with open('tweetfile.csv') as TweetBestand:
         infile = csv.reader(TweetBestand, delimiter='\n')
         tweets = list(infile)
-        if teller < len(tweets):
-            tweet = tweets[teller][0]
-            teller += 1
-        TweetBestand.close()
-    try:
-        return tweet
-    except:
-        tweet = 'error, er zijn geen tweets meer'
-        return tweet
+    return tweets
 
 
 
@@ -41,8 +32,8 @@ def tweetuploaden(TWEET_TEXT):
     global tweet
     time.sleep(10)
     tweet = tweetLezen()
-
     print('SUCCESS' if r.status_code == 200 else 'FAILURE')
+
 def Tweetlog(tweet):
     datum = datetime.datetime.now()
     csv = open('rejectedTweets.csv', 'a')
@@ -65,16 +56,15 @@ def tweet_raw(tweet):
 
 
 
-def tweetweergeven(SEARCH_TERM):
+def tweetweergeven():
     i = 0
-    time.sleep(30)
-    pager = TwitterRestPager(api, 'search/tweets', {'q': SEARCH_TERM, 'count': 5})
-    while True:
-        for item in pager.get_iterator():
-            print(item['text'] if 'text' in item else item)
-            print('')
-            i = i + 1
-            if i == 5:
-                i = 0
-                break
-        time.sleep(60)
+    tweets = ['', '', '']
+    pager = TwitterRestPager(api, 'search/tweets', {'q': 'from:NSZuilTestGr5', 'count': 3})
+    for item in pager.get_iterator():
+        tweets[i] = item['text']
+        i = i + 1
+        if i == 3:
+            i = 0
+            return tweets
+
+

@@ -1,3 +1,6 @@
+==INSTALLEER TWITTERAPI==
+
+
 ===NS Consumenten Zuil Miniproject 5A - Groep 5===
 Groepsleden: Raymond Becking, Lucas Schilperoort, Paiman Wandy, Rikesh Kisoensingh.
 Vereisten: Python 3.5
