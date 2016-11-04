@@ -2,7 +2,7 @@ from tkinter import *
 from Functies import *
 
 
-
+#Opent de feedback scherm
 def b():
     rootb=Toplevel(root)
     rootb.title("NS Consumenten Zuil - Feedback")
@@ -39,6 +39,7 @@ def b():
     rootframeb.pack()
     rootb.mainloop()
 
+#Opent de moderation panel
 def c():
     rootc=Toplevel(root)
     rootc.title("NS Consumenten Zuil - Moderation")
@@ -95,6 +96,7 @@ def c():
     rootframec.pack()
     rootc.mainloop()
 
+#Opent de tweet display scherm
 def d():
     rootd=Toplevel(root)
     rootd.title("NS Consumenten Zuil - Display Scherm")
@@ -124,6 +126,7 @@ def d():
     rootframed.pack()
     rootd.mainloop()
 
+#Opent de beheer scherm
 root=Tk()
 root.title("NS Consumenten Zuil - Beheer")
 rootframe = Frame(root, bg="#ffb400", width=960, height=540)
