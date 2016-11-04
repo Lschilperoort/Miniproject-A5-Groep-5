@@ -109,6 +109,18 @@ def d():
     titelDisplayTweet.image = tweetDisplayTitel
     titelDisplayTweet.place(x=47, y=47)
 
+    label1 = Label(rootframed,text="GOP strategist Steve Schmidt: #Trump camp's dishonest criminalization of HRC is \"yet another attack on the pillars of democracy\" #NeverTrump",font=("Helvetica", 13), bg="white", wraplength=710, justify=LEFT)
+    label1.pack()
+    label1.place(x=175, y=175)
+
+    label2 = Label(rootframed,text="If we make it easier for more foreign visitors to visit... (it) grows the #economy.” Pss the #JOLTAct http://tiny.cc/PassJOLT @dddddddddddd!",font=("Helvetica", 13), bg="white", wraplength=710, justify=LEFT)
+    label2.pack()
+    label2.place(x=175, y=303)
+
+    label3 = Label(rootframed,text="If we make it easier for more foreign visitors to visit... (it) grows the #economy.” Pss the #JOLTAct http://tiny.cc/PassJOLT @dddddddddddd!",font=("Helvetica", 13), bg="white", wraplength=710, justify=LEFT)
+    label3.pack()
+    label3.place(x=175, y=431)
+
     rootframed.pack()
     rootd.mainloop()
 
