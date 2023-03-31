@@ -4,15 +4,15 @@ https://github.com/Lschilperoort/Miniproject-A5-Groep-5
 
 
 ===NS Consumenten Zuil Miniproject 5A - Groep 5===
-Groepsleden: Raymond Becking, Lucas Schilperoort, Paiman Wandy, Rikesh Kisoensingh.
+Groepsleden: Raymond Becking, Lucas Schilperoort, Paiman Wandy, Rik.
 Vereisten: Python 3.5
 
 ==Beschrijving==
 
 De Nederlandse Spoorwegen vinden het erg belangrijk 
 dat zij goed kunnen communiceren met hun klanten.
-Daarom houden ze van tijd tot tijd een enquête onder de reizigers. 
-Het nadeel van een enquête is dat het lang duurt voordat je de resultaten krijgt. 
+Daarom houden ze van tijd tot tijd een enquÃªte onder de reizigers. 
+Het nadeel van een enquÃªte is dat het lang duurt voordat je de resultaten krijgt. 
 De NS heeft gehoord dat Twitter veel sneller werkt. 
 Het lijkt de directie leuk dat klanten hun ervaringen via een computer, 
 aanwezig in het station kunnen delen 
@@ -61,10 +61,10 @@ en door de "reject" button in te klikken wordt de tweet niet vertoond maar opges
 in een log bestand.
 
 #Daarna krijgt iemand van de NS het berichtje te zien 
-en diegene kan kiezen voor “accept” of “reject”. 
-Bij “reject” wordt de opmerking samen met datum en tijd aan een logfile toegevoegd. 
-Bij “accept” wordt het berichtje op Twitter geplaatst via een twitteraccount van de NS. 
-Het account bevat het woord “test” in de naam, 
+en diegene kan kiezen voor â€œacceptâ€ of â€œrejectâ€. 
+Bij â€œrejectâ€ wordt de opmerking samen met datum en tijd aan een logfile toegevoegd. 
+Bij â€œacceptâ€ wordt het berichtje op Twitter geplaatst via een twitteraccount van de NS. 
+Het account bevat het woord â€œtestâ€ in de naam, 
 want het gaat nu nog om een Proof-of-Concept (PoC).
 
 ==Bugs==
